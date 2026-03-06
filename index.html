@@ -13,11 +13,11 @@
      HERO
 ════════════════════════════════════════════════════ -->
 <div class="hero">
-  <div class="badge">Estudio de Mercado · 2027</div>
+  <div class="badge">Estudio de Mercado · 2026</div>
   <h1>¿Tu gimnasio<br><span>pierde miembros</span>?</h1>
   <p class="hero-sub">Estamos investigando los retos reales de retención en gimnasios. No te vamos a vender nada — solo queremos escucharte.</p>
   <div class="hero-meta">
-    <div class="hero-meta-item"><span class="dot"></span>4 – 6 minutos</div>
+    <div class="hero-meta-item"><span class="dot"></span>5 – 7 minutos</div>
     <div class="hero-meta-item"><span class="dot"></span>Totalmente confidencial</div>
     <div class="hero-meta-item"><span class="dot"></span>Acceso prioritario al piloto</div>
   </div>
@@ -113,6 +113,17 @@
       </div>
 
       <div class="q">
+        <label class="q-label">Aproximadamente, ¿cuántos miembros dejan de asistir cada mes en tu gimnasio? <span class="required">*</span></label>
+        <div class="options-grid">
+          <label class="opt-item"><input type="radio" name="churn_monthly" value="1-3" required><span class="opt-label"><span class="opt-marker"></span>1 – 3</span></label>
+          <label class="opt-item"><input type="radio" name="churn_monthly" value="4-10"><span class="opt-label"><span class="opt-marker"></span>4 – 10</span></label>
+          <label class="opt-item"><input type="radio" name="churn_monthly" value="11-25"><span class="opt-label"><span class="opt-marker"></span>11 – 25</span></label>
+          <label class="opt-item"><input type="radio" name="churn_monthly" value="mas25"><span class="opt-label"><span class="opt-marker"></span>Más de 25</span></label>
+          <label class="opt-item"><input type="radio" name="churn_monthly" value="nose"><span class="opt-label"><span class="opt-marker"></span>No lo tengo medido</span></label>
+        </div>
+      </div>
+
+      <div class="q">
         <label class="q-label">¿Cómo te das cuenta de que un miembro dejó de asistir? <span class="required">*</span></label>
         <div class="options-grid cols-1">
           <label class="opt-item"><input type="radio" name="detection_method" value="sistema" required><span class="opt-label"><span class="opt-marker"></span>Mi sistema me lo notifica automáticamente</span></label>
@@ -147,11 +158,14 @@
       </div>
 
       <div class="q">
-        <label class="q-label">¿Qué tan grande es el impacto económico de perder miembros en tu gimnasio? <span class="required">*</span></label>
-        <div class="options-grid cols-1">
-          <label class="opt-item"><input type="radio" name="economic_impact" value="bajo" required><span class="opt-label"><span class="opt-marker"></span>Bajo — lo compensamos fácilmente con nuevos miembros</span></label>
-          <label class="opt-item"><input type="radio" name="economic_impact" value="medio"><span class="opt-label"><span class="opt-marker"></span>Medio — nos afecta pero lo manejamos</span></label>
-          <label class="opt-item"><input type="radio" name="economic_impact" value="alto"><span class="opt-label"><span class="opt-marker"></span>Alto — es uno de los problemas que más me preocupa</span></label>
+        <label class="q-label">¿Cuánto representa aproximadamente la pérdida mensual por cancelaciones o miembros que dejan de pagar? <span class="required">*</span></label>
+        <div class="q-hint">En MXN — considera membresías no renovadas ese mes.</div>
+        <div class="options-grid">
+          <label class="opt-item"><input type="radio" name="monthly_loss" value="menos5k" required><span class="opt-label"><span class="opt-marker"></span>Menos de $5,000</span></label>
+          <label class="opt-item"><input type="radio" name="monthly_loss" value="5k-20k"><span class="opt-label"><span class="opt-marker"></span>$5,000 – $20,000</span></label>
+          <label class="opt-item"><input type="radio" name="monthly_loss" value="20k-50k"><span class="opt-label"><span class="opt-marker"></span>$20,000 – $50,000</span></label>
+          <label class="opt-item"><input type="radio" name="monthly_loss" value="mas50k"><span class="opt-label"><span class="opt-marker"></span>Más de $50,000</span></label>
+          <label class="opt-item"><input type="radio" name="monthly_loss" value="nose"><span class="opt-label"><span class="opt-marker"></span>No lo tengo calculado</span></label>
         </div>
       </div>
 
@@ -182,6 +196,25 @@
       <div class="q">
         <label class="q-label">¿Cuál? (si aplica)</label>
         <input type="text" name="software_name" placeholder="Ej. Mindbody, Gymdesk, Fitco, ninguno...">
+      </div>
+
+      <div class="q">
+        <label class="q-label">¿Actualmente pagas por ese software? <span class="required">*</span></label>
+        <div class="options-grid">
+          <label class="opt-item"><input type="radio" name="pays_software" value="si" required><span class="opt-label"><span class="opt-marker"></span>Sí</span></label>
+          <label class="opt-item"><input type="radio" name="pays_software" value="no"><span class="opt-label"><span class="opt-marker"></span>No</span></label>
+        </div>
+      </div>
+
+      <div class="q" id="q-software-cost">
+        <label class="q-label">¿Cuánto pagas al mes por él?</label>
+        <div class="q-hint">En MXN por mes.</div>
+        <div class="options-grid">
+          <label class="opt-item"><input type="radio" name="software_cost" value="menos300"><span class="opt-label"><span class="opt-marker"></span>Menos de $300</span></label>
+          <label class="opt-item"><input type="radio" name="software_cost" value="300-800"><span class="opt-label"><span class="opt-marker"></span>$300 – $800</span></label>
+          <label class="opt-item"><input type="radio" name="software_cost" value="800-2000"><span class="opt-label"><span class="opt-marker"></span>$800 – $2,000</span></label>
+          <label class="opt-item"><input type="radio" name="software_cost" value="mas2000"><span class="opt-label"><span class="opt-marker"></span>Más de $2,000</span></label>
+        </div>
       </div>
 
       <div class="q">
@@ -278,29 +311,63 @@
       </div>
 
       <div class="q">
-        <label class="q-label">¿Te interesaría participar como gimnasio piloto — probar el sistema antes del lanzamiento, de forma gratuita, y darnos retroalimentación? <span class="required">*</span></label>
+        <label class="q-label">¿Algo más que quieras decirnos sobre cómo manejas la retención hoy?</label>
+        <textarea name="open_comments" placeholder="Cualquier contexto, frustración o comentario es bienvenido..."></textarea>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SECCIÓN 06: CONVERSIÓN — EARLY ADOPTERS ────── -->
+  <div class="section" data-section="6">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <div>
+        <div class="section-title">¿Quieres ser el primero en probarlo?</div>
+        <div class="section-desc">Esta es la última pregunta — y la más importante.</div>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="q">
+        <label class="q-label">Si esta herramienta ayudara a reducir cancelaciones en tu gimnasio, ¿te interesaría probarla antes del lanzamiento, sin costo? <span class="required">*</span></label>
         <div class="options-grid">
-          <label class="opt-item"><input type="radio" name="pilot_interest" value="muy_interesado" required><span class="opt-label"><span class="opt-marker"></span>Sí, me interesa mucho</span></label>
-          <label class="opt-item"><input type="radio" name="pilot_interest" value="quiza"><span class="opt-label"><span class="opt-marker"></span>Quizás, cuéntame más</span></label>
+          <label class="opt-item"><input type="radio" name="pilot_interest" value="si" required><span class="opt-label"><span class="opt-marker"></span>Sí, quiero probarlo</span></label>
+          <label class="opt-item"><input type="radio" name="pilot_interest" value="quiza"><span class="opt-label"><span class="opt-marker"></span>Tal vez — depende de los detalles</span></label>
           <label class="opt-item"><input type="radio" name="pilot_interest" value="no"><span class="opt-label"><span class="opt-marker"></span>No por ahora</span></label>
         </div>
       </div>
 
       <div class="q">
-        <label class="q-label">¿Cómo podemos contactarte si hay avances o quieres ser parte del piloto?</label>
-        <div class="row">
+        <label class="q-label">Déjanos tus datos para mantenerte al tanto — te avisamos cuando esté listo el acceso anticipado.</label>
+        <div class="q-hint">Solo los usaremos para contactarte sobre el piloto.</div>
+        <div style="display:flex; flex-direction:column; gap:12px; margin-top:8px;">
+
+          <input type="text" name="contact_name" placeholder="Tu nombre">
+
           <div>
+            <label class="q-label" style="margin-bottom:8px;">¿Cómo prefieres que te contactemos?</label>
+            <div class="options-grid" style="grid-template-columns:1fr 1fr;">
+              <label class="opt-item" id="toggle-whats">
+                <input type="radio" name="contact_preference" value="whatsapp">
+                <span class="opt-label"><span class="opt-marker"></span>📱 WhatsApp</span>
+              </label>
+              <label class="opt-item" id="toggle-email">
+                <input type="radio" name="contact_preference" value="email">
+                <span class="opt-label"><span class="opt-marker"></span>✉️ Correo</span>
+              </label>
+            </div>
+          </div>
+
+          <div id="field-whatsapp" style="display:none;">
+            <input type="tel" name="contact_phone" placeholder="WhatsApp con, ej. 5573584232">
+          </div>
+
+          <div id="field-email" style="display:none;">
             <input type="email" name="contact_email" placeholder="tu@correo.com">
           </div>
-          <div>
-            <input type="tel" name="contact_phone" placeholder="WhatsApp / Teléfono">
-          </div>
-        </div>
-      </div>
 
-      <div class="q">
-        <label class="q-label">¿Algo más que quieras decirnos sobre cómo manejas la retención hoy?</label>
-        <textarea name="open_comments" placeholder="Cualquier contexto, frustración o comentario es bienvenido..."></textarea>
+        </div>
       </div>
 
     </div>

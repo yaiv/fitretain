@@ -157,3 +157,21 @@ document.getElementById('mainForm').addEventListener('submit', async function (e
 const spinStyle = document.createElement('style');
 spinStyle.textContent = `@keyframes spin { to { transform: rotate(360deg); } }`;
 document.head.appendChild(spinStyle);
+
+
+  // Mostrar/ocultar costo del software según si pagan o no
+  document.querySelectorAll('input[name="pays_software"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      const costBlock = document.getElementById('q-software-cost');
+      costBlock.style.display = radio.value === 'si' ? 'block' : 'none';
+    });
+  });
+  document.getElementById('q-software-cost').style.display = 'none';
+
+  // Mostrar campo según preferencia de contacto
+  document.querySelectorAll('input[name="contact_preference"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      document.getElementById('field-whatsapp').style.display = radio.value === 'whatsapp' ? 'block' : 'none';
+      document.getElementById('field-email').style.display    = radio.value === 'email'    ? 'block' : 'none';
+    });
+  });
