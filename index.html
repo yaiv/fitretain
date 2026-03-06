@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudio de Mercado — FitRetain</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════ -->
+<div class="hero">
+  <div class="badge">Estudio de Mercado · 2027</div>
+  <h1>¿Tu gimnasio<br><span>pierde miembros</span>?</h1>
+  <p class="hero-sub">Estamos investigando los retos reales de retención en gimnasios. No te vamos a vender nada — solo queremos escucharte.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><span class="dot"></span>4 – 6 minutos</div>
+    <div class="hero-meta-item"><span class="dot"></span>Totalmente confidencial</div>
+    <div class="hero-meta-item"><span class="dot"></span>Acceso prioritario al piloto</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PROGRESS BAR
+════════════════════════════════════════════════════ -->
+<div class="progress-wrap">
+  <div class="progress-bar-bg">
+    <div class="progress-bar-fill" id="progressFill"></div>
+  </div>
+  <div class="progress-label" id="progressLabel">Progreso: 0%</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     FORM
+════════════════════════════════════════════════════ -->
+<div class="form-container">
+<form id="mainForm" novalidate>
+
+  <!-- ── SECCIÓN 01: TU GIMNASIO ────────────────────── -->
+  <div class="section visible" data-section="1">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div>
+        <div class="section-title">Tu Gimnasio</div>
+        <div class="section-desc">Cuéntanos brevemente sobre tu negocio.</div>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="row">
+        <div class="q">
+          <label class="q-label">Nombre del gimnasio <span class="required">*</span></label>
+          <input type="text" name="gym_name" placeholder="Ej. FitZone Gym" required>
+        </div>
+        <div class="q">
+          <label class="q-label">Ciudad / Estado <span class="required">*</span></label>
+          <input type="text" name="gym_city" placeholder="Ej. Monterrey, NL" required>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">¿Cuántos miembros activos tiene actualmente tu gimnasio? <span class="required">*</span></label>
+        <div class="options-grid">
+          <label class="opt-item"><input type="radio" name="gym_size" value="menos50" required><span class="opt-label"><span class="opt-marker"></span>Menos de 50</span></label>
+          <label class="opt-item"><input type="radio" name="gym_size" value="50-150"><span class="opt-label"><span class="opt-marker"></span>50 – 150</span></label>
+          <label class="opt-item"><input type="radio" name="gym_size" value="150-400"><span class="opt-label"><span class="opt-marker"></span>150 – 400</span></label>
+          <label class="opt-item"><input type="radio" name="gym_size" value="mas400"><span class="opt-label"><span class="opt-marker"></span>Más de 400</span></label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="q">
+          <label class="q-label">Tu nombre</label>
+          <input type="text" name="contact_name" placeholder="Nombre completo">
+        </div>
+        <div class="q">
+          <label class="q-label">Rol en el gimnasio <span class="required">*</span></label>
+          <select name="contact_role" required>
+            <option value="" disabled selected>Selecciona...</option>
+            <option value="owner">Dueño / Propietario</option>
+            <option value="manager">Gerente / Administrador</option>
+            <option value="operations">Encargado de operaciones</option>
+            <option value="other">Otro</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SECCIÓN 02: VALIDACIÓN DEL PROBLEMA ────────── -->
+  <div class="section" data-section="2">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div>
+        <div class="section-title">El Problema de Retención</div>
+        <div class="section-desc">Cuéntanos cómo vives hoy este reto en tu gimnasio.</div>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="q">
+        <label class="q-label">Pensando en los últimos 6 meses, ¿qué tan frecuente es que un miembro deje de asistir sin avisarte? <span class="required">*</span></label>
+        <div class="options-grid cols-1">
+          <label class="opt-item"><input type="radio" name="churn_freq" value="raramente" required><span class="opt-label"><span class="opt-marker"></span>Raramente — no es un problema para nosotros</span></label>
+          <label class="opt-item"><input type="radio" name="churn_freq" value="ocasional"><span class="opt-label"><span class="opt-marker"></span>Ocasionalmente — pasa pero no es crítico</span></label>
+          <label class="opt-item"><input type="radio" name="churn_freq" value="frecuente"><span class="opt-label"><span class="opt-marker"></span>Frecuentemente — es algo que me preocupa</span></label>
+          <label class="opt-item"><input type="radio" name="churn_freq" value="muy_frecuente"><span class="opt-label"><span class="opt-marker"></span>Muy seguido — es uno de mis principales problemas</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">¿Cómo te das cuenta de que un miembro dejó de asistir? <span class="required">*</span></label>
+        <div class="options-grid cols-1">
+          <label class="opt-item"><input type="radio" name="detection_method" value="sistema" required><span class="opt-label"><span class="opt-marker"></span>Mi sistema me lo notifica automáticamente</span></label>
+          <label class="opt-item"><input type="radio" name="detection_method" value="manual"><span class="opt-label"><span class="opt-marker"></span>Lo reviso manualmente cada cierto tiempo</span></label>
+          <label class="opt-item"><input type="radio" name="detection_method" value="cancelacion"><span class="opt-label"><span class="opt-marker"></span>Cuando cancela o deja de pagar, me entero</span></label>
+          <label class="opt-item"><input type="radio" name="detection_method" value="staff"><span class="opt-label"><span class="opt-marker"></span>El staff lo nota en el piso</span></label>
+          <label class="opt-item"><input type="radio" name="detection_method" value="nodoy"><span class="opt-label"><span class="opt-marker"></span>Generalmente no me doy cuenta hasta que ya se fue</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">¿Cuáles crees que son las razones principales por las que tus miembros dejan de ir?</label>
+        <div class="q-hint">Selecciona las que más se repiten.</div>
+        <div class="options-grid">
+          <label class="opt-item"><input type="checkbox" name="churn_reason" value="motivacion"><span class="opt-label"><span class="opt-marker"></span>Falta de motivación o constancia</span></label>
+          <label class="opt-item"><input type="checkbox" name="churn_reason" value="precio"><span class="opt-label"><span class="opt-marker"></span>Precio o situación económica</span></label>
+          <label class="opt-item"><input type="checkbox" name="churn_reason" value="tiempo"><span class="opt-label"><span class="opt-marker"></span>Falta de tiempo</span></label>
+          <label class="opt-item"><input type="checkbox" name="churn_reason" value="resultados"><span class="opt-label"><span class="opt-marker"></span>No ven resultados rápido</span></label>
+          <label class="opt-item"><input type="checkbox" name="churn_reason" value="atencion"><span class="opt-label"><span class="opt-marker"></span>Falta de seguimiento o atención</span></label>
+          <label class="opt-item"><input type="checkbox" name="churn_reason" value="otro"><span class="opt-label"><span class="opt-marker"></span>Otro motivo</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">Cuando detectas que un miembro lleva varios días sin ir, ¿qué haces normalmente? <span class="required">*</span></label>
+        <div class="options-grid cols-1">
+          <label class="opt-item"><input type="radio" name="recovery_action" value="nada" required><span class="opt-label"><span class="opt-marker"></span>Nada — no tenemos un proceso definido para eso</span></label>
+          <label class="opt-item"><input type="radio" name="recovery_action" value="manual"><span class="opt-label"><span class="opt-marker"></span>Le mando un mensaje o lo llamo manualmente</span></label>
+          <label class="opt-item"><input type="radio" name="recovery_action" value="promo"><span class="opt-label"><span class="opt-marker"></span>Le ofrezco algún descuento o promoción</span></label>
+          <label class="opt-item"><input type="radio" name="recovery_action" value="sistema"><span class="opt-label"><span class="opt-marker"></span>Tengo un flujo automatizado para reactivarlos</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">¿Qué tan grande es el impacto económico de perder miembros en tu gimnasio? <span class="required">*</span></label>
+        <div class="options-grid cols-1">
+          <label class="opt-item"><input type="radio" name="economic_impact" value="bajo" required><span class="opt-label"><span class="opt-marker"></span>Bajo — lo compensamos fácilmente con nuevos miembros</span></label>
+          <label class="opt-item"><input type="radio" name="economic_impact" value="medio"><span class="opt-label"><span class="opt-marker"></span>Medio — nos afecta pero lo manejamos</span></label>
+          <label class="opt-item"><input type="radio" name="economic_impact" value="alto"><span class="opt-label"><span class="opt-marker"></span>Alto — es uno de los problemas que más me preocupa</span></label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SECCIÓN 03: HERRAMIENTAS Y GESTIÓN ─────────── -->
+  <div class="section" data-section="3">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div>
+        <div class="section-title">Cómo Gestionas tu Gimnasio Hoy</div>
+        <div class="section-desc">Queremos entender qué herramientas usas y qué tanto te cubren.</div>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="q">
+        <label class="q-label">¿Usas algún software de gestión actualmente? <span class="required">*</span></label>
+        <div class="options-grid cols-1">
+          <label class="opt-item"><input type="radio" name="uses_software" value="si_dedicado" required><span class="opt-label"><span class="opt-marker"></span>Sí, un software dedicado para gimnasios</span></label>
+          <label class="opt-item"><input type="radio" name="uses_software" value="si_generico"><span class="opt-label"><span class="opt-marker"></span>Sí, herramientas genéricas (Excel, Sheets, WhatsApp...)</span></label>
+          <label class="opt-item"><input type="radio" name="uses_software" value="combinacion"><span class="opt-label"><span class="opt-marker"></span>Combinación de varias cosas</span></label>
+          <label class="opt-item"><input type="radio" name="uses_software" value="no"><span class="opt-label"><span class="opt-marker"></span>No uso ningún software</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">¿Cuál? (si aplica)</label>
+        <input type="text" name="software_name" placeholder="Ej. Mindbody, Gymdesk, Fitco, ninguno...">
+      </div>
+
+      <div class="q">
+        <label class="q-label">¿Tu herramienta actual te da visibilidad sobre qué miembros están en riesgo de dejar de asistir? <span class="required">*</span></label>
+        <div class="options-grid cols-1">
+          <label class="opt-item"><input type="radio" name="has_churn_visibility" value="si" required><span class="opt-label"><span class="opt-marker"></span>Sí, tengo esa visibilidad</span></label>
+          <label class="opt-item"><input type="radio" name="has_churn_visibility" value="parcial"><span class="opt-label"><span class="opt-marker"></span>A medias — tengo datos pero no es claro</span></label>
+          <label class="opt-item"><input type="radio" name="has_churn_visibility" value="no"><span class="opt-label"><span class="opt-marker"></span>No — eso es justo lo que me falta</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">Si pudieras mejorar una sola cosa de cómo gestionas la retención hoy, ¿qué sería?</label>
+        <textarea name="retention_gap" placeholder="Ej. Saber antes de que cancelen, poder motivarlos, ver estadísticas de asistencia..."></textarea>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SECCIÓN 04: VALIDACIÓN DE SOLUCIÓN ─────────── -->
+  <div class="section" data-section="4">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div>
+        <div class="section-title">¿Qué Herramientas Valorarías?</div>
+        <div class="section-desc">Sin hablar de ningún producto específico — cuéntanos qué tipo de ayuda te sería más útil.</div>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="q">
+        <label class="q-label">¿Qué tan valioso sería para ti recibir una alerta cuando un miembro lleva más de 10 días sin asistir, antes de que cancele? <span class="required">*</span></label>
+        <div class="options-grid cols-1">
+          <label class="opt-item"><input type="radio" name="val_alertas" value="muy" required><span class="opt-label"><span class="opt-marker"></span>Muy valioso — lo usaría de inmediato</span></label>
+          <label class="opt-item"><input type="radio" name="val_alertas" value="algo"><span class="opt-label"><span class="opt-marker"></span>Algo valioso — dependería de qué tan fácil es usarlo</span></label>
+          <label class="opt-item"><input type="radio" name="val_alertas" value="poco"><span class="opt-label"><span class="opt-marker"></span>Poco — ya tengo forma de detectarlo</span></label>
+          <label class="opt-item"><input type="radio" name="val_alertas" value="nada"><span class="opt-label"><span class="opt-marker"></span>No lo veo necesario</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">¿Has intentado antes motivar a tus miembros para que sean más constantes? (retos, reconocimientos, recompensas...) <span class="required">*</span></label>
+        <div class="options-grid cols-1">
+          <label class="opt-item"><input type="radio" name="tried_motivation" value="si_funciono" required><span class="opt-label"><span class="opt-marker"></span>Sí, y funcionó bien</span></label>
+          <label class="opt-item"><input type="radio" name="tried_motivation" value="si_no_funciono"><span class="opt-label"><span class="opt-marker"></span>Sí, pero no tuvo el impacto esperado</span></label>
+          <label class="opt-item"><input type="radio" name="tried_motivation" value="no_quisiera"><span class="opt-label"><span class="opt-marker"></span>No, pero me gustaría tener herramientas para eso</span></label>
+          <label class="opt-item"><input type="radio" name="tried_motivation" value="no_irrelevante"><span class="opt-label"><span class="opt-marker"></span>No, no creo que sea lo que necesita mi gimnasio</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">Si tus miembros recibieran un resumen mensual de su progreso (días entrenados, rachas, logros) que pudieran compartir en redes, ¿crees que eso ayudaría a que se quedaran más tiempo? <span class="required">*</span></label>
+        <div class="options-grid cols-1">
+          <label class="opt-item"><input type="radio" name="val_wrapped" value="si" required><span class="opt-label"><span class="opt-marker"></span>Sí, creo que generaría más compromiso</span></label>
+          <label class="opt-item"><input type="radio" name="val_wrapped" value="quiza"><span class="opt-label"><span class="opt-marker"></span>Quizás — dependería del perfil de mis miembros</span></label>
+          <label class="opt-item"><input type="radio" name="val_wrapped" value="no"><span class="opt-label"><span class="opt-marker"></span>No creo que cambiara mucho</span></label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SECCIÓN 05: VALIDACIÓN DE NEGOCIO ──────────── -->
+  <div class="section" data-section="5">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <div>
+        <div class="section-title">Validación de Negocio</div>
+        <div class="section-desc">Estas preguntas son las más importantes para nosotros. Sé tan directo como puedas.</div>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="q">
+        <label class="q-label">Imagina una herramienta que te ayude a detectar miembros en riesgo de cancelar y a motivarlos para que se queden. Si eso realmente funcionara para tu gimnasio, ¿considerarías pagar por ella? <span class="required">*</span></label>
+        <div class="options-grid cols-1">
+          <label class="opt-item"><input type="radio" name="would_pay" value="si" required><span class="opt-label"><span class="opt-marker"></span>Sí, sin duda — si resuelve el problema, pagaría</span></label>
+          <label class="opt-item"><input type="radio" name="would_pay" value="si_condicion"><span class="opt-label"><span class="opt-marker"></span>Sí, pero necesitaría ver resultados primero</span></label>
+          <label class="opt-item"><input type="radio" name="would_pay" value="quiza"><span class="opt-label"><span class="opt-marker"></span>Quizás — dependería del precio y facilidad de uso</span></label>
+          <label class="opt-item"><input type="radio" name="would_pay" value="no"><span class="opt-label"><span class="opt-marker"></span>No — prefiero soluciones gratuitas o no es prioridad ahora</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">Si ese sistema te ayudara a reducir cancelaciones y mejorar la constancia, ¿cuánto estarías dispuesto a pagar mensualmente? <span class="required">*</span></label>
+        <div class="q-hint">Precios en MXN por mes.</div>
+        <div class="options-grid">
+          <label class="opt-item"><input type="radio" name="willingness_pay" value="gratis" required><span class="opt-label"><span class="opt-marker"></span>Solo si es gratis</span></label>
+          <label class="opt-item"><input type="radio" name="willingness_pay" value="menos500"><span class="opt-label"><span class="opt-marker"></span>Hasta $500</span></label>
+          <label class="opt-item"><input type="radio" name="willingness_pay" value="500-1000"><span class="opt-label"><span class="opt-marker"></span>$500 – $1,000</span></label>
+          <label class="opt-item"><input type="radio" name="willingness_pay" value="1000-2000"><span class="opt-label"><span class="opt-marker"></span>$1,000 – $2,000</span></label>
+          <label class="opt-item"><input type="radio" name="willingness_pay" value="mas2000"><span class="opt-label"><span class="opt-marker"></span>Más de $2,000</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">¿Te interesaría participar como gimnasio piloto — probar el sistema antes del lanzamiento, de forma gratuita, y darnos retroalimentación? <span class="required">*</span></label>
+        <div class="options-grid">
+          <label class="opt-item"><input type="radio" name="pilot_interest" value="muy_interesado" required><span class="opt-label"><span class="opt-marker"></span>Sí, me interesa mucho</span></label>
+          <label class="opt-item"><input type="radio" name="pilot_interest" value="quiza"><span class="opt-label"><span class="opt-marker"></span>Quizás, cuéntame más</span></label>
+          <label class="opt-item"><input type="radio" name="pilot_interest" value="no"><span class="opt-label"><span class="opt-marker"></span>No por ahora</span></label>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">¿Cómo podemos contactarte si hay avances o quieres ser parte del piloto?</label>
+        <div class="row">
+          <div>
+            <input type="email" name="contact_email" placeholder="tu@correo.com">
+          </div>
+          <div>
+            <input type="tel" name="contact_phone" placeholder="WhatsApp / Teléfono">
+          </div>
+        </div>
+      </div>
+
+      <div class="q">
+        <label class="q-label">¿Algo más que quieras decirnos sobre cómo manejas la retención hoy?</label>
+        <textarea name="open_comments" placeholder="Cualquier contexto, frustración o comentario es bienvenido..."></textarea>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── SUBMIT ──────────────────────────────────────── -->
+  <div class="submit-zone">
+    <p>Tus respuestas son 100% confidenciales. Solo se usarán para entender mejor el problema — no para venderte nada.</p>
+    <button type="submit" class="btn-submit">
+      Enviar respuestas
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"/>
+        <polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </button>
+  </div>
+
+</form>
+
+<!-- ─── SUCCESS SCREEN ─────────────────────────────── -->
+<div class="success-screen" id="successScreen">
+  <div class="success-icon">🎯</div>
+  <h2>¡Gracias por<br>participar!</h2>
+  <p style="margin-top:16px; font-size:15px;">Tus respuestas han sido registradas. Si indicaste interés en el piloto, te contactaremos pronto con los siguientes pasos.</p>
+  <p style="margin-top:12px; font-size:13px; color:#444;">— Equipo FitRetain</p>
+</div>
+
+</div><!-- /form-container -->
+
+<script src="main.js"></script>
+</body>
+</html>
