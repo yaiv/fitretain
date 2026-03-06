@@ -1,5 +1,5 @@
 // ─── CONFIGURACIÓN ────────────────────────────────────────────────────────────
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzgoDEYHxI2dOlSnD8lAgn68hDkfVTFyQODWjwmOc89Z8bFlFFnIdhGzHe5EO4Qi7-4/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwqKHzxyAXe4Lw5ZxT1FDaYTHHc3EiDLZIIfyXveqg6YogQPPF72NswmBb74mRtL11/exec';
 
 // ─── SCALE BUTTONS ────────────────────────────────────────────────────────────
 document.querySelectorAll('.scale-btn').forEach(btn => {
